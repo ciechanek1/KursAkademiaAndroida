@@ -8,13 +8,13 @@ import org.koin.dsl.module
 
 val appModule = module {
 
-    single {
+    factory {
         LinearLayoutManager(androidContext())
     }
-    single {
+    factory {
         GridLayoutManager(androidContext(), 2)
     }
-    single {
+    factory {
         DividerItemDecoration(androidContext(), LinearLayoutManager.VERTICAL)
     }
 }
