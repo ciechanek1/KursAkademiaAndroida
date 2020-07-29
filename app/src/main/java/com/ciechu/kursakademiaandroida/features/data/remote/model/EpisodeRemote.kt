@@ -2,7 +2,6 @@ package com.ciechu.kursakademiaandroida.features.data.remote.model
 import com.ciechu.kursakademiaandroida.features.episodes.domain.model.Episode
 import com.google.gson.annotations.SerializedName
 
-fgdfgfdgdfgdf
 
 data class EpisodeRemote(
     @SerializedName("air_date") val airDate: String,
