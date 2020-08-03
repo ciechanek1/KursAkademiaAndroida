@@ -10,7 +10,6 @@ data class EpisodeDisplayable (
     val name: String,
     val url: String
 ) {
-
     constructor(episode: Episode): this (
         id = episode.id,
         name = episode.name,
