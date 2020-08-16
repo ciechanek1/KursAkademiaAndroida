@@ -1,21 +1,10 @@
 package com.ciechu.kursakademiaandroida.features.episodes.domain
 
+import com.ciechu.kursakademiaandroida.core.base.UseCase
 import com.ciechu.kursakademiaandroida.features.episodes.EpisodeRepository
 import com.ciechu.kursakademiaandroida.features.episodes.domain.model.Episode
-import kotlinx.coroutines.*
 
-class GetEpisodesUseCase(private val episodeRepository: EpisodeRepository) {
+class GetEpisodesUseCase(private val episodeRepository: EpisodeRepository): UseCase<List<Episode>, Unit>() {
 
-    operator fun invoke(scope: CoroutineScope,
-    executionDispatcher: CoroutineDispatcher = Dispatchers.IO,
-    onResults: (Result<List<Episode>>) -> Unit = {}) {
-        scope.launch {
-           val results = withContext(executionDispatcher) {
-               runCatching { episodeRepository.getEpisodes() }
-           }
-            results.onSuccess {  }
-            results.onFailure {  }
-            onResults(results)
-        }
-    }
+    override suspend fun action(params: Unit) = episodeRepository.getEpisodes()
 }
