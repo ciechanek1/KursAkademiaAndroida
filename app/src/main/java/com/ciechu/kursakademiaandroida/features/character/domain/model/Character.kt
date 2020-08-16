@@ -1,7 +1,7 @@
 package com.ciechu.kursakademiaandroida.features.character.domain.model
 
-import com.ciechu.kursakademiaandroida.features.data.remote.model.LocationRemote
-import com.ciechu.kursakademiaandroida.features.data.remote.model.OriginRemote
+import com.ciechu.kursakademiaandroida.core.api.model.LocationRemote
+import com.ciechu.kursakademiaandroida.core.api.model.OriginRemote
 
 data class Character (
     val created: String,

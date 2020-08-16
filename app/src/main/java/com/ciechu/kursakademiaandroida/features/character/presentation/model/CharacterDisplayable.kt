@@ -1,8 +1,8 @@
 package com.ciechu.kursakademiaandroida.features.character.presentation.model
 
+import com.ciechu.kursakademiaandroida.core.api.model.LocationRemote
+import com.ciechu.kursakademiaandroida.core.api.model.OriginRemote
 import com.ciechu.kursakademiaandroida.features.character.domain.model.Character
-import com.ciechu.kursakademiaandroida.features.data.remote.model.LocationRemote
-import com.ciechu.kursakademiaandroida.features.data.remote.model.OriginRemote
 
 data class CharacterDisplayable (
     val created: String,

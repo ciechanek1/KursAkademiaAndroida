@@ -1,6 +1,6 @@
 package com.ciechu.kursakademiaandroida.core.di
 
-import com.ciechu.kursakademiaandroida.features.data.remote.RickAndMortyApi
+import com.ciechu.kursakademiaandroida.core.api.RickAndMortyApi
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

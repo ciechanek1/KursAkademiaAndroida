@@ -1,4 +1,4 @@
-package com.ciechu.kursakademiaandroida.features.data.remote.model
+package com.ciechu.kursakademiaandroida.core.api.model
 
 import com.ciechu.kursakademiaandroida.features.location.domain.model.Location
 import com.google.gson.annotations.SerializedName
