@@ -9,12 +9,12 @@ abstract class UseCase<out Type, in Params> {
     operator fun invoke(scope: CoroutineScope,
                         params: Params,
                         executionDispatcher: CoroutineDispatcher = Dispatchers.IO,
-                        onResults: (Result<Type>) -> Unit = {}) {
+                        onResult: (Result<Type>) -> Unit = {}) {
         scope.launch {
-            val results = withContext(executionDispatcher) {
+            val result = withContext(executionDispatcher) {
                 runCatching { action(params) }
             }
-            onResults(results)
+            onResult(result)
         }
     }
 }
