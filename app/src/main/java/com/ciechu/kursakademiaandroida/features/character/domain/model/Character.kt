@@ -1,19 +1,25 @@
 package com.ciechu.kursakademiaandroida.features.character.domain.model
 
-import com.ciechu.kursakademiaandroida.core.api.model.LocationRemote
-import com.ciechu.kursakademiaandroida.core.api.model.OriginRemote
-
-data class Character (
-    val created: String,
-    val episode: List<String>,
-    val gender: String,
+data class Character(
     val id: Int,
-    val image: String,
-    val location: LocationRemote,
     val name: String,
-    val origin: OriginRemote,
-    val species: String,
     val status: String,
+    val species: String,
     val type: String,
+    val gender: String,
+    val characterOrigin: CharacterOrigin,
+    val characterLocation: CharacterLocation,
+    val image: String,
+    val episode: List<String>,
+    val url: String
+)
+
+data class CharacterOrigin(
+    val name: String,
+    val url: String
+)
+
+data class CharacterLocation(
+    val name: String,
     val url: String
 )

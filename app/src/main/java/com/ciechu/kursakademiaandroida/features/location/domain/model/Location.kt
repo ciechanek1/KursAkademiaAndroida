@@ -2,7 +2,6 @@ package com.ciechu.kursakademiaandroida.features.location.domain.model
 
 
 data class Location (
-    val created: String,
     val dimension: String,
     val id: Int,
     val name: String,
