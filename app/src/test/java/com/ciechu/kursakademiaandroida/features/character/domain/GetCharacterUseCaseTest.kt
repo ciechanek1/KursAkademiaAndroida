@@ -21,6 +21,6 @@ internal class GetCharacterUseCaseTest {
         )
 
         //then
-        coVerify { repository.getCharacter() }
+        coVerify { repository.getCharacters() }
     }
 }

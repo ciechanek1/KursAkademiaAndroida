@@ -6,5 +6,5 @@ import com.ciechu.kursakademiaandroida.features.character.domain.model.Character
 
 class GetCharacterUseCase(private val characterRepository: CharacterRepository): UseCase<List<Character>, Unit>() {
     
-    override suspend fun action(params: Unit) = characterRepository.getCharacter()
+    override suspend fun action(params: Unit) = characterRepository.getCharacters()
 }

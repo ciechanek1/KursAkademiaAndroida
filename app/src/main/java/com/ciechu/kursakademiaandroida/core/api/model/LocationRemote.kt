@@ -1,4 +1,4 @@
-package com.ciechu.kursakademiaandroida.features.data.remote.model
+package com.ciechu.kursakademiaandroida.core.api.model
 
 import com.ciechu.kursakademiaandroida.features.location.domain.model.Location
 import com.google.gson.annotations.SerializedName
@@ -12,8 +12,9 @@ data class LocationRemote(
     @SerializedName("type") val type: String,
     @SerializedName("url") val url: String
 ){
+    companion object
+
     fun toLocation() = Location(
-        created = created,
         dimension = dimension,
         id = id,
         name = name,
