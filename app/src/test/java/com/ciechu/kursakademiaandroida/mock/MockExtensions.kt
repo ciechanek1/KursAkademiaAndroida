@@ -4,8 +4,13 @@ import com.ciechu.kursakademiaandroida.core.api.model.*
 import com.ciechu.kursakademiaandroida.features.character.data.local.model.CharacterCached
 import com.ciechu.kursakademiaandroida.features.character.data.local.model.CharacterLocationCached
 import com.ciechu.kursakademiaandroida.features.character.data.local.model.CharacterOriginCached
+import com.ciechu.kursakademiaandroida.features.character.domain.model.Character
+import com.ciechu.kursakademiaandroida.features.character.domain.model.CharacterLocation
+import com.ciechu.kursakademiaandroida.features.character.domain.model.CharacterOrigin
 import com.ciechu.kursakademiaandroida.features.episodes.data.local.model.EpisodeCashed
+import com.ciechu.kursakademiaandroida.features.episodes.domain.model.Episode
 import com.ciechu.kursakademiaandroida.features.location.data.local.model.LocationCached
+import com.ciechu.kursakademiaandroida.features.location.domain.model.Location
 import org.jetbrains.annotations.TestOnly
 
 @TestOnly
@@ -141,4 +146,50 @@ fun CharacterCached.Companion.mock() = CharacterCached(
     image = "character image",
     episode = emptyList(),
     url = "character url"
+)
+
+@TestOnly
+fun Episode.Companion.mock() = Episode(
+    id = 1,
+    name = "episode name",
+    airDate = "episode air date",
+    code = "episode code",
+    characters = emptyList(),
+    url = "episode url"
+)
+
+@TestOnly
+fun CharacterOrigin.Companion.mock() = CharacterOrigin(
+    name = "character origin name",
+    url = "character origin url"
+)
+
+@TestOnly
+fun CharacterLocation.Companion.mock() = CharacterLocation(
+    name = "character location name",
+    url = "character location url"
+)
+
+@TestOnly
+fun Character.Companion.mock() = Character(
+    id = 1,
+    name = "character name",
+    status = "character status",
+    species = "character species",
+    type = "character type",
+    gender = "character gender",
+    characterOrigin = CharacterOrigin.mock(),
+    characterLocation = CharacterLocation.mock(),
+    image = "character image",
+    episode = emptyList(),
+    url = "character url"
+)
+@TestOnly
+fun Location.Companion.mock() = Location(
+    id = 1,
+    name = "location name",
+    type = "location type",
+    dimension = "location dimensions",
+    residents = emptyList(),
+    url = "location url"
 )

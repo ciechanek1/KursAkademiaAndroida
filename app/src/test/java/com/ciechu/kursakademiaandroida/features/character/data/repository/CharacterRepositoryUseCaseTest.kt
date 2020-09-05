@@ -3,9 +3,9 @@ package com.ciechu.kursakademiaandroida.features.character.data.repository
 import com.ciechu.kursakademiaandroida.core.api.RickAndMortyApi
 import com.ciechu.kursakademiaandroida.core.api.model.CharacterResponse
 import com.ciechu.kursakademiaandroida.core.network.NetworkStateProvider
-import com.ciechu.kursakademiaandroida.features.character.CharacterRepository
 import com.ciechu.kursakademiaandroida.features.character.data.local.CharacterDao
 import com.ciechu.kursakademiaandroida.features.character.data.local.model.CharacterCached
+import com.ciechu.kursakademiaandroida.features.character.domain.CharacterRepository
 import com.ciechu.kursakademiaandroida.mock.mock
 import io.mockk.coEvery
 import io.mockk.coVerify
