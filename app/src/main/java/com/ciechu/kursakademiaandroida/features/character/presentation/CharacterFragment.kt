@@ -1,4 +1,4 @@
-package com.ciechu.kursakademiaandroida.features.episodes.presentation
+package com.ciechu.kursakademiaandroida.features.character.presentation
 
 import android.view.View
 import androidx.lifecycle.observe
@@ -6,15 +6,15 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ciechu.kursakademiaandroida.R
 import com.ciechu.kursakademiaandroida.core.base.BaseFragment
-import kotlinx.android.synthetic.main.fragment_episode.*
+import kotlinx.android.synthetic.main.fragment_character.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class EpisodeFragment : BaseFragment<EpisodeViewModel>(R.layout.fragment_episode) {
+class CharacterFragment : BaseFragment<CharacterViewModel>(R.layout.fragment_character) {
 
-    override val viewModel: EpisodeViewModel by viewModel()
+    override val viewModel: CharacterViewModel by viewModel()
 
-    private val episodeAdapter: EpisodeAdapter by inject()
+    private val characterAdapter: CharacterAdapter by inject()
     private val layoutManager: LinearLayoutManager by inject()
     private val dividerItemDecoration: DividerItemDecoration by inject()
 
@@ -25,7 +25,7 @@ class EpisodeFragment : BaseFragment<EpisodeViewModel>(R.layout.fragment_episode
 
     override fun initObserver() {
         super.initObserver()
-        observeEpisodes()
+        observeCharacter()
     }
 
     override fun onIdleState() {
@@ -38,17 +38,17 @@ class EpisodeFragment : BaseFragment<EpisodeViewModel>(R.layout.fragment_episode
         progressBar.visibility = View.VISIBLE
     }
 
-    private fun observeEpisodes() {
-        viewModel.episodes.observe(this) {
-            episodeAdapter.setEpisodes(it)
+    private fun observeCharacter() {
+        viewModel.character.observe(this) {
+            characterAdapter.setCharacters(it)
         }
     }
 
-    private fun initRecyclerView(){
-        episodeRecyclerView.apply {
-            layoutManager = this@EpisodeFragment.layoutManager
+    private fun initRecyclerView() {
+        characterRecyclerView.apply {
+            layoutManager = this@CharacterFragment.layoutManager
             addItemDecoration(dividerItemDecoration)
-            adapter = episodeAdapter
+            adapter = characterAdapter
         }
     }
 }

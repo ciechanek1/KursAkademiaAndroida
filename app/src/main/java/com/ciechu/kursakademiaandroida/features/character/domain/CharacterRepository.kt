@@ -1,4 +1,4 @@
-package com.ciechu.kursakademiaandroida.features.character
+package com.ciechu.kursakademiaandroida.features.character.domain
 
 import com.ciechu.kursakademiaandroida.features.character.domain.model.Character
 

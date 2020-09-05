@@ -9,7 +9,7 @@ import com.ciechu.kursakademiaandroida.mock.mock
 import com.ciechu.kursakademiaandroida.utils.ViewModelTest
 import com.ciechu.kursakademiaandroida.utils.getOrAwaitValue
 import com.ciechu.kursakademiaandroida.utils.observeForTesting
-import io.mockk.coEvery
+import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
 import org.amshove.kluent.shouldBe
@@ -48,7 +48,7 @@ internal class EpisodeViewModelTest: ViewModelTest(){
         //given
         val episodes = listOf(Episode.mock(), Episode.mock(), Episode.mock())
         val useCase = mockk<GetEpisodesUseCase>{
-            coEvery { this@mockk(any(), any(), any(), any()) } answers {
+            every { this@mockk(any(), any(), any(), any()) } answers {
                 lastArg<(Result<List<Episode>>) -> Unit>()(Result.success(episodes))
             }
         }
@@ -72,7 +72,8 @@ internal class EpisodeViewModelTest: ViewModelTest(){
         //given
         val throwable = Throwable("Ops... Something went wrong")
         val useCase = mockk<GetEpisodesUseCase>{
-            coEvery { this@mockk(any(), any(), any(), any()) } answers {
+            every {
+                this@mockk(any(), any(), any(), any()) } answers {
                 lastArg<(Result<List<Episode>>) -> Unit>()(Result.failure(throwable))
             }
         }

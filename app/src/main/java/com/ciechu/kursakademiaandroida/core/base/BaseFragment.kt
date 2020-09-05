@@ -8,7 +8,7 @@ import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
 
-abstract class BaseFragment<T: BaseViewModel>(@LayoutRes layoutRes: Int): Fragment() {
+abstract class BaseFragment<T: BaseViewModel>(@LayoutRes layoutRes: Int): Fragment(layoutRes) {
 
     abstract val viewModel: T
 
@@ -16,6 +16,7 @@ abstract class BaseFragment<T: BaseViewModel>(@LayoutRes layoutRes: Int): Fragme
         super.onViewCreated(view, savedInstanceState)
         initView()
         initObserver()
+
         bindViewModelToLifecycle()
     }
 
