@@ -5,6 +5,7 @@ import com.ciechu.kursakademiaandroida.features.character.data.local.model.Chara
 import com.ciechu.kursakademiaandroida.features.character.data.local.model.CharacterLocationCached
 import com.ciechu.kursakademiaandroida.features.character.data.local.model.CharacterOriginCached
 import com.ciechu.kursakademiaandroida.features.episodes.data.local.model.EpisodeCashed
+import com.ciechu.kursakademiaandroida.features.episodes.domain.model.Episode
 import com.ciechu.kursakademiaandroida.features.location.data.local.model.LocationCached
 import org.jetbrains.annotations.TestOnly
 
@@ -141,4 +142,14 @@ fun CharacterCached.Companion.mock() = CharacterCached(
     image = "character image",
     episode = emptyList(),
     url = "character url"
+)
+
+@TestOnly
+fun Episode.Companion.mock() = Episode(
+    id = 1,
+    name = "episode name",
+    airDate = "episode air date",
+    code = "episode code",
+    characters = emptyList(),
+    url = "episode url"
 )
