@@ -28,7 +28,6 @@ class EpisodeRepositoryImpl(
     }
 
     private suspend fun getEpisodesFromRemote(): List<Episode> {
-      //  throw HttpException(Response.error<List<Episode>>(500, ResponseBody.Companion.create(null, "")))
         return rickAndMortyApi.getEpisodes()
             .results
             .map { it.toEpisode() }
