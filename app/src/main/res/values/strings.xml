@@ -2,4 +2,8 @@
     <string name="app_name">KursAkademiaAndroida</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string name="error_internal">Houston, we have a server-side problem. Try again in a few minutes.</string>
+    <string name="error_bad_request">Validation error. Please check input parameters.</string>
+    <string name="error_unknown">Ops… Something went wrong</string>
 </resources>
